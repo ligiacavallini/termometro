@@ -18,11 +18,11 @@ body{
 		.mountain,
 		.mountain-two,
 		.mountain-three{
-			position: absolute;
+			position: fixed;
 			bottom: 0;
 			border-left: 150px solid transparent;
 			border-right: 150px solid transparent;
-			border-bottom: 180px solid #7ac1e4;
+			border-bottom: 180px solid;
 			z-index: 1;
 		}
 		.mountain-two {
@@ -42,14 +42,14 @@ body{
 			right: -65px;
 			border-left: 65px solid transparent;
 			border-right: 65px solid transparent;
-			border-bottom: 77px solid #ceeaf6;
+			border-bottom: 77px solid;
 			z-index: 2;
 		}
 		.mountain-cap-1, .mountain-cap-2, .mountain-cap-3 {
 			position: absolute;
 			border-left: 25px solid transparent;
 			border-right: 25px solid transparent;
-			border-top: 25px solid #ceeaf6;
+			border-top: 25px solid;
 		}
 		.mountain-cap-1 {
 			left: -58px;
@@ -66,13 +66,45 @@ body{
 	}
 
 	&.summer{
-		background: $lightyellow;
+		background: $sky-summer;
 		transition: background-color 1000ms linear;
+		.mountains {
+			.mountain,
+			.mountain-two,
+			.mountain-three {
+				border-bottom-color: $brown;
+				transition: border-bottom-color 1000ms linear;
+			}
+			.mountain-top {
+				border-bottom-color: $green;
+				transition: border-bottom-color 1000ms linear;
+			}
+			.mountain-cap-1, .mountain-cap-2, .mountain-cap-3 {
+				border-top-color: $green;
+				transition: border-top-color 1000ms linear;
+			}
+		}
 	}
 
 	&.winter{
-		background: $gray-500;
+		background: $sky-winter;
 		transition: background-color 1000ms linear;
+		.mountains {
+			.mountain,
+			.mountain-two,
+			.mountain-three {
+				border-bottom-color: $brown;
+				transition: border-bottom-color 1000ms linear;
+			}
+			.mountain-top {
+				border-bottom-color: $white;
+				transition: border-bottom-color 1000ms linear;
+			}
+			.mountain-cap-1, .mountain-cap-2, .mountain-cap-3 {
+				border-top-color: $white;
+				transition: border-top-color 1000ms linear;
+			}
+		}
 	}
 
 	.meter {

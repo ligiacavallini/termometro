@@ -12,11 +12,11 @@ body {
   #weather .mountains .mountain,
   #weather .mountains .mountain-two,
   #weather .mountains .mountain-three {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
-    border-bottom: 180px solid #7ac1e4;
+    border-bottom: 180px solid;
     z-index: 1; }
   #weather .mountains .mountain-two {
     left: 80px;
@@ -33,13 +33,13 @@ body {
     right: -65px;
     border-left: 65px solid transparent;
     border-right: 65px solid transparent;
-    border-bottom: 77px solid #ceeaf6;
+    border-bottom: 77px solid;
     z-index: 2; }
   #weather .mountains .mountain-cap-1, #weather .mountains .mountain-cap-2, #weather .mountains .mountain-cap-3 {
     position: absolute;
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
-    border-top: 25px solid #ceeaf6; }
+    border-top: 25px solid; }
   #weather .mountains .mountain-cap-1 {
     left: -58px;
     top: 77px; }
@@ -51,12 +51,34 @@ body {
     top: 72px; }
 
 #weather.summer {
-  background: lightyellow;
+  background: #b3e0ff;
   transition: background-color 1000ms linear; }
+  #weather.summer .mountains .mountain,
+  #weather.summer .mountains .mountain-two,
+  #weather.summer .mountains .mountain-three {
+    border-bottom-color: #663300;
+    transition: border-bottom-color 1000ms linear; }
+  #weather.summer .mountains .mountain-top {
+    border-bottom-color: #39ac39;
+    transition: border-bottom-color 1000ms linear; }
+  #weather.summer .mountains .mountain-cap-1, #weather.summer .mountains .mountain-cap-2, #weather.summer .mountains .mountain-cap-3 {
+    border-top-color: #39ac39;
+    transition: border-top-color 1000ms linear; }
 
 #weather.winter {
-  background: #ccc;
+  background: #e0e0e0;
   transition: background-color 1000ms linear; }
+  #weather.winter .mountains .mountain,
+  #weather.winter .mountains .mountain-two,
+  #weather.winter .mountains .mountain-three {
+    border-bottom-color: #663300;
+    transition: border-bottom-color 1000ms linear; }
+  #weather.winter .mountains .mountain-top {
+    border-bottom-color: #fff;
+    transition: border-bottom-color 1000ms linear; }
+  #weather.winter .mountains .mountain-cap-1, #weather.winter .mountains .mountain-cap-2, #weather.winter .mountains .mountain-cap-3 {
+    border-top-color: #fff;
+    transition: border-top-color 1000ms linear; }
 
 #weather .meter {
   position: fixed;
