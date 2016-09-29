@@ -5,74 +5,129 @@ body{
 	margin: 0;
 }
 
-.summer{
-	background: $lightyellow;
-	transition: background-color 1000ms linear;
-}
 
-.winter{
-	background: $gray-500;
-	transition: background-color 1000ms linear;
-}
 
-.meter {
-	position: fixed;
-	margin: 0 auto;
-	width: 100%;
-	height: 80%;
+#weather{
+	.mountains{
+		overflow:hidden;
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		.mountain,
+		.mountain-two,
+		.mountain-three{
+			position: absolute;
+			bottom: 0;
+			border-left: 150px solid transparent;
+			border-right: 150px solid transparent;
+			border-bottom: 180px solid #7ac1e4;
+			z-index: 1;
+		}
+		.mountain-two {
+			left: 80px;
+			bottom: -20px;
+			opacity: .5;
+			z-index: 0;
+		}
+		.mountain-three {
+			left: -60px;
+			bottom:-10px;
+			opacity: .6;
+			z-index: 0;
+		}
+		.mountain-top{
+			position: absolute;
+			right: -65px;
+			border-left: 65px solid transparent;
+			border-right: 65px solid transparent;
+			border-bottom: 77px solid #ceeaf6;
+			z-index: 2;
+		}
+		.mountain-cap-1, .mountain-cap-2, .mountain-cap-3 {
+			position: absolute;
+			border-left: 25px solid transparent;
+			border-right: 25px solid transparent;
+			border-top: 25px solid #ceeaf6;
+		}
+		.mountain-cap-1 {
+			left: -58px;
+			top: 77px;
+		}
+		.mountain-cap-2 {
+			left: -25px;
+			top: 68px;
+		}
+		.mountain-cap-3 {
+			left:11px;
+			top: 72px;
+		}
+	}
 
-	.glass {
-		background: $gray-200;
-		border-radius: 100px 100px 0 0;
-		display: block;
-		height: 100%;
-		margin: 0 auto;
-		padding: 5px;
-		position: relative;
-		width: 20px;
+	&.summer{
+		background: $lightyellow;
+		transition: background-color 1000ms linear;
+	}
 
-		.filler, .info {
-			background: $gray-500;
+	&.winter{
+		background: $gray-500;
+		transition: background-color 1000ms linear;
+	}
+
+	.meter {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 80%;
+		max-height: 400px;
+
+		.glass {
+			background: $gray-200;
 			border-radius: 100px 100px 0 0;
 			display: block;
-			height: 100%;
+			height: 80%;
+			margin: 0 auto;
+			padding: 5px;
+			position: relative;
 			width: 20px;
-			position: absolute;
-			z-index: 30;
-			bottom: -5px;
-		}
 
-		.info{
-			width: 50px;
-			padding-left: 50px;
-			background: transparent;
+			.filler, .info {
+				background: $gray-500;
+				border-radius: 100px 100px 0 0;
+				display: block;
+				height: 100%;
+				width: 20px;
+				position: absolute;
+				z-index: 30;
+				bottom: -5px;
+			}
+
+			.info{
+				width: 50px;
+				padding-left: 50px;
+				background: transparent;
+			}
 		}
-	}
-	strong { display: block; text-align: center; }
-	.goal {
-		font-size: 30px;
-	}
-	.total {
-		font-size: 16px;
-		position: absolute;
-		right: 35px;
-	}
-	.bulb {
-		background: $gray-200;
-		border-radius: 100px;
-		display: block;
-		height: 50px;
-		margin: 0 auto;
-		padding: 5px;
-		position: relative;
-		top: -20px;
-		width: 50px;
-		.red-circle {
-			background: $gray-500;
+		.bulb {
+			background: $gray-200;
 			border-radius: 100px;
 			display: block;
 			height: 50px;
+			margin: 0 auto;
+			padding: 5px;
+			position: relative;
+			top: -20px;
 			width: 50px;
+			.bulb-fill {
+				background: $gray-500;
+				border-radius: 100px;
+				display: block;
+				height: 50px;
+				width: 50px;
+			}
 		}
 	}
 }
