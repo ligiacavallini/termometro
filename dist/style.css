@@ -110,45 +110,6 @@ body {
     bottom: 250px;
     opacity: 0.9; }
 
-#weather.summer {
-  background: #a5e2ff;
-  transition: background-color 1000ms linear; }
-  #weather.summer .mountains .rounded-mountain-cap-1, #weather.summer .mountains .rounded-mountain-cap-2, #weather.summer .mountains .rounded-mountain-cap-3 {
-    border-top-color: #80cf66;
-    border-right-color: #80cf66;
-    transition: border-color 1000ms linear; }
-  #weather.summer .mountains .rounded-mountain-top {
-    border-top-color: #80cf66;
-    border-left-color: #80cf66;
-    transition: border-color 1000ms linear; }
-  #weather.summer .mountains .cloud, #weather.summer .mountains .cloud:before, #weather.summer .mountains .cloud:after {
-    background: #fff; }
-  #weather.summer .sun {
-    background: #ffe554;
-    box-shadow: 1px 1px 30px #fff5ba;
-    transition: background 1000ms linear; }
-
-#weather.fall {
-  background: #e8e9e8; }
-
-#weather.winter {
-  background: #e1e1e1;
-  transition: background-color 1000ms linear; }
-  #weather.winter .mountains .rounded-mountain-cap-1, #weather.winter .mountains .rounded-mountain-cap-2, #weather.winter .mountains .rounded-mountain-cap-3 {
-    border-top-color: #fff;
-    border-right-color: #fff;
-    transition: border-color 1000ms linear; }
-  #weather.winter .mountains .rounded-mountain-top {
-    border-top-color: #fff;
-    border-left-color: #fff;
-    transition: border-color 1000ms linear; }
-  #weather.winter .mountains .cloud, #weather.winter .mountains .cloud:before, #weather.winter .mountains .cloud:after {
-    background: #f0f1f0; }
-  #weather.winter .sun {
-    background: #fff;
-    box-shadow: 1px 1px 30px #fff;
-    transition: background 1000ms linear; }
-
 #weather .meter {
   position: fixed;
   top: 50%;
@@ -167,7 +128,6 @@ body {
     position: relative;
     width: 20px; }
     #weather .meter .glass .filler, #weather .meter .glass .info {
-      background: #ccc;
       border-radius: 100px 100px 0 0;
       display: block;
       height: 100%;
@@ -190,10 +150,60 @@ body {
     top: -20px;
     width: 50px; }
     #weather .meter .bulb .bulb-fill {
-      background: #ccc;
       border-radius: 100px;
       display: block;
       height: 50px;
       width: 50px; }
+
+#weather.summer {
+  background: #a5e2ff;
+  transition: background-color 1000ms linear; }
+  #weather.summer .mountains .rounded-mountain-cap-1, #weather.summer .mountains .rounded-mountain-cap-2, #weather.summer .mountains .rounded-mountain-cap-3 {
+    border-top-color: #80cf66;
+    border-right-color: #80cf66;
+    transition: border-color 1000ms linear; }
+  #weather.summer .mountains .rounded-mountain-top {
+    border-top-color: #80cf66;
+    border-left-color: #80cf66;
+    transition: border-color 1000ms linear; }
+  #weather.summer .mountains .cloud, #weather.summer .mountains .cloud:before, #weather.summer .mountains .cloud:after {
+    background: #fff; }
+  #weather.summer .sun {
+    background: #ffe554;
+    box-shadow: 1px 1px 30px #fff5ba;
+    transition: background 1000ms linear; }
+  #weather.summer .bulb .bulb-fill {
+    background: #fc5353;
+    transition: background 1000ms linear; }
+  #weather.summer .glass .filler {
+    background: #fc5353;
+    transition: background 1000ms linear; }
+
+#weather.fall {
+  background: #e8e9e8; }
+
+#weather.winter {
+  background: #e1e1e1;
+  transition: background-color 1000ms linear; }
+  #weather.winter .mountains .rounded-mountain-cap-1, #weather.winter .mountains .rounded-mountain-cap-2, #weather.winter .mountains .rounded-mountain-cap-3 {
+    border-top-color: #fff;
+    border-right-color: #fff;
+    transition: border-color 1000ms linear; }
+  #weather.winter .mountains .rounded-mountain-top {
+    border-top-color: #fff;
+    border-left-color: #fff;
+    transition: border-color 1000ms linear; }
+  #weather.winter .mountains .cloud, #weather.winter .mountains .cloud:before, #weather.winter .mountains .cloud:after {
+    background: #f0f1f0; }
+  #weather.winter .sun {
+    background: #fff;
+    box-shadow: 1px 1px 30px #fff;
+    transition: background 1000ms linear; }
+  #weather.winter .bulb .bulb-fill {
+    background: #afe5ff;
+    transition: background 1000ms linear; }
+  #weather.winter .glass .filler {
+    background: #afe5ff;
+    transition: background 1000ms linear; }
 
 /*# sourceMappingURL=style.css.map */
