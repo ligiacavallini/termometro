@@ -1,6 +1,13 @@
 body {
-  background: #fff;
   margin: 0; }
+
+#weather .sun {
+  width: 180px;
+  height: 180px;
+  position: fixed;
+  right: 5%;
+  top: 4%;
+  border-radius: 90px; }
 
 #weather .mountains {
   overflow: hidden;
@@ -9,76 +16,138 @@ body {
   left: 0;
   right: 0;
   bottom: 0; }
-  #weather .mountains .mountain,
-  #weather .mountains .mountain-two,
-  #weather .mountains .mountain-three {
+  #weather .mountains .rounded-mountain {
+    border-right: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid #663300;
+    border-radius: 30px;
+    border-top: 50px solid #663300;
+    width: 300px;
+    height: 300px;
+    transform: rotate(45deg);
+    bottom: -210px;
     position: fixed;
-    bottom: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 180px solid;
-    z-index: 1; }
-  #weather .mountains .mountain-two {
-    left: 80px;
-    bottom: -20px;
-    opacity: .5;
-    z-index: 0; }
-  #weather .mountains .mountain-three {
-    left: -60px;
-    bottom: -10px;
-    opacity: .6;
-    z-index: 0; }
-  #weather .mountains .mountain-top {
+    background: #663300; }
+  #weather .mountains .rounded-mountain-1 {
+    z-index: 5; }
+  #weather .mountains .rounded-mountain-2,
+  #weather .mountains .rounded-mountain-3 {
+    z-index: 3; }
+  #weather .mountains .rounded-mountain-2 {
+    opacity: 0.5;
+    left: 133px;
+    bottom: -241px; }
+  #weather .mountains .rounded-mountain-3 {
+    opacity: 0.6;
+    left: -131px;
+    bottom: -225px; }
+  #weather .mountains .rounded-mountain-top {
+    border-right: 115px solid transparent;
+    border-bottom: 115px solid transparent;
+    border-left: 110px solid;
+    border-radius: 30px 0 0 0;
+    border-top: 115px solid;
+    bottom: 174px;
+    left: -50px;
+    top: -51px;
+    position: fixed;
+    background: transparent; }
+  #weather .mountains .rounded-mountain-cap-1, #weather .mountains .rounded-mountain-cap-2, #weather .mountains .rounded-mountain-cap-3 {
     position: absolute;
-    right: -65px;
-    border-left: 65px solid transparent;
-    border-right: 65px solid transparent;
-    border-bottom: 77px solid;
-    z-index: 2; }
-  #weather .mountains .mountain-cap-1, #weather .mountains .mountain-cap-2, #weather .mountains .mountain-cap-3 {
+    transform: rotate(90deg);
+    border-radius: 100px;
+    border-left: 63px solid transparent;
+    border-right: 60px solid;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid; }
+  #weather .mountains .rounded-mountain-cap-1 {
+    left: -133px;
+    top: -3px; }
+  #weather .mountains .rounded-mountain-cap-2 {
+    left: -77px;
+    top: -82px; }
+  #weather .mountains .rounded-mountain-cap-3 {
+    left: -11px;
+    top: -125px;
+    transform: rotateX(180deg); }
+
+@keyframes cloud {
+  0% {
+    left: -200px; }
+  100% {
+    left: 100%; } }
+  #weather .mountains .cloud:before {
+    content: '';
+    left: 50px; }
+  #weather .mountains .cloud:after {
+    content: '';
+    left: 25px;
+    top: -10px; }
+  #weather .mountains .cloud, #weather .mountains .cloud:before, #weather .mountains .cloud:after {
     position: absolute;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-top: 25px solid; }
-  #weather .mountains .mountain-cap-1 {
-    left: -58px;
-    top: 77px; }
-  #weather .mountains .mountain-cap-2 {
-    left: -25px;
-    top: 68px; }
-  #weather .mountains .mountain-cap-3 {
-    left: 11px;
-    top: 72px; }
+    width: 70px;
+    height: 30px;
+    border-radius: 100px / 50px; }
+  #weather .mountains .cloud {
+    position: fixed;
+    z-index: 4;
+    left: -140px; }
+  #weather .mountains .cloud-1 {
+    animation: cloud 70s infinite linear;
+    animation-delay: 2s;
+    bottom: 280px; }
+  #weather .mountains .cloud-2 {
+    animation: cloud 50s infinite linear;
+    bottom: 180px;
+    opacity: 0.7;
+    z-index: 6; }
+  #weather .mountains .cloud-3 {
+    animation: cloud 60s infinite linear;
+    animation-delay: 1s;
+    bottom: 210px; }
+  #weather .mountains .cloud-4 {
+    animation: cloud 120s infinite linear;
+    bottom: 250px;
+    opacity: 0.9; }
 
 #weather.summer {
-  background: #b3e0ff;
+  background: #a5e2ff;
   transition: background-color 1000ms linear; }
-  #weather.summer .mountains .mountain,
-  #weather.summer .mountains .mountain-two,
-  #weather.summer .mountains .mountain-three {
-    border-bottom-color: #663300;
-    transition: border-bottom-color 1000ms linear; }
-  #weather.summer .mountains .mountain-top {
-    border-bottom-color: #39ac39;
-    transition: border-bottom-color 1000ms linear; }
-  #weather.summer .mountains .mountain-cap-1, #weather.summer .mountains .mountain-cap-2, #weather.summer .mountains .mountain-cap-3 {
-    border-top-color: #39ac39;
-    transition: border-top-color 1000ms linear; }
+  #weather.summer .mountains .rounded-mountain-cap-1, #weather.summer .mountains .rounded-mountain-cap-2, #weather.summer .mountains .rounded-mountain-cap-3 {
+    border-top-color: #80cf66;
+    border-right-color: #80cf66;
+    transition: border-color 1000ms linear; }
+  #weather.summer .mountains .rounded-mountain-top {
+    border-top-color: #80cf66;
+    border-left-color: #80cf66;
+    transition: border-color 1000ms linear; }
+  #weather.summer .mountains .cloud, #weather.summer .mountains .cloud:before, #weather.summer .mountains .cloud:after {
+    background: #fff; }
+  #weather.summer .sun {
+    background: #ffe554;
+    box-shadow: 1px 1px 30px #fff5ba;
+    transition: background 1000ms linear; }
+
+#weather.fall {
+  background: #e8e9e8; }
 
 #weather.winter {
-  background: #e0e0e0;
+  background: #e1e1e1;
   transition: background-color 1000ms linear; }
-  #weather.winter .mountains .mountain,
-  #weather.winter .mountains .mountain-two,
-  #weather.winter .mountains .mountain-three {
-    border-bottom-color: #663300;
-    transition: border-bottom-color 1000ms linear; }
-  #weather.winter .mountains .mountain-top {
-    border-bottom-color: #fff;
-    transition: border-bottom-color 1000ms linear; }
-  #weather.winter .mountains .mountain-cap-1, #weather.winter .mountains .mountain-cap-2, #weather.winter .mountains .mountain-cap-3 {
+  #weather.winter .mountains .rounded-mountain-cap-1, #weather.winter .mountains .rounded-mountain-cap-2, #weather.winter .mountains .rounded-mountain-cap-3 {
     border-top-color: #fff;
-    transition: border-top-color 1000ms linear; }
+    border-right-color: #fff;
+    transition: border-color 1000ms linear; }
+  #weather.winter .mountains .rounded-mountain-top {
+    border-top-color: #fff;
+    border-left-color: #fff;
+    transition: border-color 1000ms linear; }
+  #weather.winter .mountains .cloud, #weather.winter .mountains .cloud:before, #weather.winter .mountains .cloud:after {
+    background: #f0f1f0; }
+  #weather.winter .sun {
+    background: #fff;
+    box-shadow: 1px 1px 30px #fff;
+    transition: background 1000ms linear; }
 
 #weather .meter {
   position: fixed;
@@ -89,7 +158,7 @@ body {
   height: 80%;
   max-height: 400px; }
   #weather .meter .glass {
-    background: #e0e0e0;
+    background: #f0f1f0;
     border-radius: 100px 100px 0 0;
     display: block;
     height: 80%;
@@ -111,7 +180,7 @@ body {
       padding-left: 50px;
       background: transparent; }
   #weather .meter .bulb {
-    background: #e0e0e0;
+    background: #f0f1f0;
     border-radius: 100px;
     display: block;
     height: 50px;
@@ -126,3 +195,5 @@ body {
       display: block;
       height: 50px;
       width: 50px; }
+
+/*# sourceMappingURL=style.css.map */

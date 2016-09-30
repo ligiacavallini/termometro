@@ -1,0 +1,214 @@
+
+	.mountains{
+		overflow:hidden;
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+
+		.rounded-mountain{
+			border-right: 50px solid transparent;
+			border-bottom: 50px solid transparent;
+			border-left: 50px solid $brown;
+			border-radius: 30px;
+			border-top: 50px solid $brown;
+			width: 300px;
+			height: 300px;
+			transform: rotate(45deg);
+			bottom: -210px;
+			position: fixed;
+			background: $brown
+		}
+		.rounded-mountain-1{
+			z-index:5
+		}
+
+		.rounded-mountain-2,
+		.rounded-mountain-3{
+			z-index: 3
+		}
+
+		.rounded-mountain-2{
+			opacity: 0.5;
+			left: 133px;
+			bottom: -241px;
+		}
+
+		.rounded-mountain-3{
+			opacity: 0.7;
+			left: -131px;
+			bottom: -225px;
+		}
+
+		.rounded-mountain-top{
+			border-right: 115px solid transparent;
+			border-bottom: 115px solid transparent;
+			border-left: 110px solid;
+			border-radius: 30px 0 0 0;
+			border-top: 115px solid;
+			bottom: 174px;
+			left: -50px;
+			top: -51px;
+			position: fixed;
+			background: transparent;
+		}
+
+		.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
+			position: absolute;
+			transform: rotate(90deg);
+			border-radius: 100px;
+			border-left: 63px solid transparent;
+			border-right: 60px solid;
+			border-bottom: 50px solid transparent;
+			border-top: 50px solid;
+		}
+		.rounded-mountain-cap-1 {
+			left: -133px;
+			top: -3px;
+		}
+		.rounded-mountain-cap-2 {
+			left: -77px;
+			top: -82px;
+		}
+		.rounded-mountain-cap-3 {
+			left: -11px;
+			top: -125px;
+			transform: rotateX(180deg);
+		}
+
+		@keyframes cloud {
+			0%   { left: -100px; }
+			100% { left: 1000px; }
+		}
+		@-webkit-keyframes cloud {
+			0%   { left: -100px; }
+			100% { left: 1000px; }
+		}
+
+		.cloud:before {
+			content: '';
+			left: 50px;
+		}
+		.cloud:after {
+			content: '';
+			left: 25px;
+			top: -10px;
+		}
+		.cloud, .cloud:before, .cloud:after {
+			position: absolute;
+			width: 70px;
+			height: 30px;
+			-webkit-border-radius: 100px / 50px;
+			border-radius: 100px / 50px;
+		}
+		.cloud {
+			bottom: 215px;
+			-webkit-animation: cloud 50s infinite linear;
+			animation: cloud 50s infinite linear;
+			position: fixed;
+			z-index: 4;
+		}
+	}
+
+	&.summer{
+		background: $sky-summer;
+		transition: background-color 1000ms linear;
+		.mountains {
+
+			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
+				border-top-color: $green;
+				border-right-color: $green;
+				transition: border-color 1000ms linear;
+			}
+			.rounded-mountain-top{
+				border-top-color: $green;
+				border-left-color: $green;
+				transition: border-color 1000ms linear;
+			}
+			.cloud, .cloud:before, .cloud:after{
+				background: $white;
+			}
+		}
+	}
+
+	&.fall{
+		background: $sky-fall;
+	}
+
+	&.winter{
+		background: $sky-winter;
+		transition: background-color 1000ms linear;
+		.mountains {
+			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
+				border-top-color: $white;
+				border-right-color: $white;
+				transition: border-color 1000ms linear;
+			}
+			.rounded-mountain-top{
+				border-top-color: $white;
+				border-left-color: $white;
+				transition: border-color 1000ms linear;
+			}
+			.cloud, .cloud:before, .cloud:after{
+				background: $gray-100;
+			}
+		}
+	}
+
+	.meter {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 80%;
+		max-height: 400px;
+
+		.glass {
+			background: $gray-100;
+			border-radius: 100px 100px 0 0;
+			display: block;
+			height: 80%;
+			margin: 0 auto;
+			padding: 5px;
+			position: relative;
+			width: 20px;
+
+			.filler, .info {
+				background: $gray-500;
+				border-radius: 100px 100px 0 0;
+				display: block;
+				height: 100%;
+				width: 20px;
+				position: absolute;
+				z-index: 30;
+				bottom: -5px;
+			}
+
+			.info{
+				width: 50px;
+				padding-left: 50px;
+				background: transparent;
+			}
+		}
+		.bulb {
+			background: $gray-100;
+			border-radius: 100px;
+			display: block;
+			height: 50px;
+			margin: 0 auto;
+			padding: 5px;
+			position: relative;
+			top: -20px;
+			width: 50px;
+			.bulb-fill {
+				background: $gray-500;
+				border-radius: 100px;
+				display: block;
+				height: 50px;
+				width: 50px;
+			}
+		}
+	}
+}
