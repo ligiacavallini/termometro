@@ -23,15 +23,14 @@ body{
 		.rounded-mountain{
 			border-right: 50px solid transparent;
 			border-bottom: 50px solid transparent;
-			border-left: 50px solid $brown;
+			border-left: 50px solid;
 			border-radius: 30px;
-			border-top: 50px solid $brown;
+			border-top: 50px solid;
 			width: 300px;
 			height: 300px;
 			transform: rotate(45deg);
 			bottom: -210px;
 			position: fixed;
-			background: $brown
 		}
 		.rounded-mountain-1{
 			z-index:5
@@ -198,7 +197,11 @@ body{
 		background: $sky-summer;
 		transition: background-color 1000ms linear;
 		.mountains {
-
+			.rounded-mountain{
+				border-left-color: $brown;
+				border-top-color: $brown;
+				background: $brown
+			}
 			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
 				border-top-color: $green;
 				border-right-color: $green;
@@ -231,15 +234,100 @@ body{
 			}
 		}
 	}
+	
+	&.spring{
+		background: $sky-spring;
+		transition: background-color 1000ms linear;
+		.mountains {
+			.rounded-mountain{
+				border-left-color: $brown;
+				border-top-color: $brown;
+				background: $brown
+			}
+			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
+				border-top-color: $green;
+				border-right-color: $green;
+				transition: border-color 1000ms linear;
+			}
+			.rounded-mountain-top{
+				border-top-color: $green;
+				border-left-color: $green;
+				transition: border-color 1000ms linear;
+			}
+			.cloud, .cloud:before, .cloud:after{
+				background: $white;
+			}
+		}
+		.sun{
+			background: lighten($yellow, 10%);
+			box-shadow: 1px 1px 30px lighten($yellow, 30%);
+			transition: background 1000ms linear;
+		}
+		.bulb{
+			.bulb-fill{
+				background: lighten($red, 10%);
+				transition: background 1000ms linear;
+			}
+		}
+		.glass{
+			.filler{
+				background: lighten($red, 10%);
+				transition: background 1000ms linear;
+			}
+		}
+	}
 
 	&.fall{
 		background: $sky-fall;
+		transition: background-color 1000ms linear;
+		.mountains {
+			.rounded-mountain{
+				border-left-color: $brown;
+				border-top-color: $brown;
+				background: $brown
+			}	
+			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
+				border-top-color: $white;
+				border-right-color: $white;
+				transition: border-color 1000ms linear;
+			}
+			.rounded-mountain-top{
+				border-top-color: $white;
+				border-left-color: $white;
+				transition: border-color 1000ms linear;
+			}
+			.cloud, .cloud:before, .cloud:after{
+				background: $white;
+			}
+		}
+		.sun{
+			background: $white;
+			box-shadow: 1px 1px 30px lighten($white, 20%);
+			transition: background 1000ms linear;
+		}
+		.bulb{
+			.bulb-fill{
+				background: lighten($blue, 5%);
+				transition: background 1000ms linear;
+			}
+		}
+		.glass{
+			.filler{
+				background: lighten($blue, 5%);
+				transition: background 1000ms linear;
+			}
+		}
 	}
 
 	&.winter{
 		background: $sky-winter;
 		transition: background-color 1000ms linear;
 		.mountains {
+			.rounded-mountain{
+				border-left-color: $white;
+				border-top-color: $white;
+				background: $white;
+			}
 			.rounded-mountain-cap-1, .rounded-mountain-cap-2, .rounded-mountain-cap-3 {
 				border-top-color: $white;
 				border-right-color: $white;

@@ -1,33 +1,49 @@
 $(window).on('resize',function() {
     var height = $(window).height(),
-        half_height =  height / 2,
         weather = $('#weather'),
         amount,
-        percentage;
+        percentage,
+        total_height_calc = height * 3;;
 
     weather.css("height", function(){
-        return height * 2;
+        return height * 4;
     });
+    var winter = weather.height() / 4, //50
+      fall = weather.height() / 3, //66
+      spring = weather.height() / 2, //100
+      summer = weather.height() / 1; //200
+      
     calc_temperature();
     $(window).scroll(function(){
 
         calc_temperature();
 
-        if($(window).scrollTop() < half_height){
-            weather.addClass('winter');
-            weather.removeClass('summer');
+        if($(window).scrollTop() <= winter){
+          change_season('winter');
+        }else if($(window).scrollTop() <= fall){
+          change_season('fall');
+        }else if($(window).scrollTop() <= spring){
+          change_season('spring');
         }else{
-            weather.addClass('summer');
-            weather.removeClass('winter');
+          change_season('summer');
         }
     });
 
+    function change_season(season){
+      var seasons = ['winter', 'fall', 'spring', 'summer'];
+      seasons.forEach(function(k){
+        if(season == k){
+         	$("#weather").addClass(k);
+        }else{
+        	$("#weather").removeClass(k);
+        }
+      });
+    }
     function calc_temperature(){
-        amount = (($(window).scrollTop() / height) * 100);
+        amount = (($(window).scrollTop() / total_height_calc) * 100);
         percentage =  amount + "%";
         $('.filler').css("height", percentage);
         $('.info').css("height", percentage);
         $('.number').text(parseInt(amount));
     }
 }).trigger('resize');
-
