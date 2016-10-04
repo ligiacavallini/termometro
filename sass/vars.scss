@@ -12,7 +12,7 @@ $blue: #a5e2ff;
 $yellow: #ffe554;
 $red: #fc5353;
 
-$sky-summer: $blue;
+$sky-summer: darken($blue, 5%);
 $sky-winter: $gray-400;
 $sky-fall: $gray-200;
-$sky-spring: lighten($blue, 10%);
+$sky-spring: lighten($blue, 5%);
