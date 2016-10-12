@@ -136,17 +136,19 @@ body {
     position: relative;
     width: 20px; }
     #weather .meter .glass .filler, #weather .meter .glass .info {
-      border-radius: 100px 100px 0 0;
       display: block;
       height: 100%;
       width: 20px;
       position: absolute;
       z-index: 30;
       bottom: -5px; }
+    #weather .meter .glass .filler {
+      border-radius: 100px 100px 0 0; }
     #weather .meter .glass .info {
       width: 50px;
       padding-left: 50px;
-      background: transparent; }
+      background: transparent;
+      font: 15px/20px 'Open Sans', 'Arial'; }
   #weather .meter .bulb {
     background: #f0f1f0;
     border-radius: 100px;

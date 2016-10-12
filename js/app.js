@@ -1,18 +1,24 @@
 $(window).on('resize',function() {
     var height = $(window).height(),
         weather = $('#weather'),
-        amount,
+        fahrenheit,
+        celcius,
         percentage,
         total_height_calc = height * 3;;
 
     weather.css("height", function(){
         return height * 4;
     });
-    var winter = weather.height() / 4, //50
+    var winter = weather.height() / 5, //50
       fall = weather.height() / 3, //66
-      spring = weather.height() / 2, //100
-      summer = weather.height() / 1; //200
+      spring = weather.height() / 1.8, //100
+      summer = weather.height() / 1.5; //200
       
+      /*alert("total height "+weather.height());
+      alert("winter "+winter);
+      alert("fall "+fall);
+      alert("spring "+spring);
+      alert("summer "+summer);*/
     calc_temperature();
     $(window).scroll(function(){
 
@@ -40,10 +46,12 @@ $(window).on('resize',function() {
       });
     }
     function calc_temperature(){
-        amount = (($(window).scrollTop() / total_height_calc) * 100);
-        percentage =  amount + "%";
+        fahrenheit = (($(window).scrollTop() / total_height_calc) * 100);
+        celsius = (fahrenheit - 32) * 0.5556;
+        percentage =  fahrenheit + "%";
         $('.filler').css("height", percentage);
         $('.info').css("height", percentage);
-        $('.number').text(parseInt(amount));
+        $('.fahrenheit .number').text(parseInt(fahrenheit));
+        $('.celsius .number').text(parseInt(celsius));
     }
 }).trigger('resize');
